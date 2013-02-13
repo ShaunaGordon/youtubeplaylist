@@ -91,6 +91,7 @@
             var link = $(this);
             var ytid = youtubeid(link.attr('href'));
             var replacedText = listItem.text();
+            var replacedHtml = listItem.html();;
 
             link.data('yt-href', link.attr('href'));
             link.attr('href', '#yt-gal-' + listIndex);
@@ -108,7 +109,7 @@
                   thumbUrl = self._protocol + 'img.youtube.com/vi/' + ytid + '/0.jpg';
                 }
                 var thumbHtml = '<img src="' + thumbUrl + '" alt="' + replacedText + '" />';
-                link.empty().html(thumbHtml + replacedText).attr('title', replacedText);
+                link.empty().html(thumbHtml + replacedHtml).attr('title', replacedText);
               }
             }
             else {
